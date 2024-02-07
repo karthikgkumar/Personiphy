@@ -1,0 +1,13 @@
+prefix=E:/01_BTECH CS/datascience/Personiphy/venv/Library
+exec_prefix=E:/01_BTECH CS/datascience/Personiphy/venv/Library
+libdir=E:/01_BTECH CS/datascience/Personiphy/venv/Library/lib
+sharedlibdir=E:/01_BTECH CS/datascience/Personiphy/venv/Library/lib
+includedir=E:/01_BTECH CS/datascience/Personiphy/venv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
