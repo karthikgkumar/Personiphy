@@ -26,8 +26,28 @@ async def handler(file: UploadFile = File(...)):
         # Use the model to make predictions
         result = model.predict(my_data)
 
-        # Return the predictions as a JSON response
-        return JSONResponse(content={'result': result.tolist()})
+        col_list = list(my_data)
+        ext = col_list[0:10]
+        est = col_list[10:20]
+        agr = col_list[20:30]
+        csn = col_list[30:40]
+        opn = col_list[40:50]
+
+        my_sums = pd.DataFrame()
+        my_sums['extroversion'] = my_data[ext].sum(axis=1) / 10
+        my_sums['neurotic'] = my_data[est].sum(axis=1) / 10
+        my_sums['agreeable'] = my_data[agr].sum(axis=1) / 10
+        my_sums['conscientious'] = my_data[csn].sum(axis=1) / 10
+        my_sums['open'] = my_data[opn].sum(axis=1) / 10
+        my_sums['cluster'] = result
+
+        my_sum = my_sums.drop('cluster', axis=1)
+
+        # Convert the DataFrame to a list of dictionaries
+        data = my_sum.to_dict('records')
+
+        # Return the data as a JSON response
+        return JSONResponse(content={'result': data})
     finally:
         # Remove the temporary file
         import os
