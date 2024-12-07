@@ -99,6 +99,6 @@ Personiphy stands out as a comprehensive tool for both hiring and employee devel
 
 ## Contact
 **Author:** Karthik G Kumar, Model Engineering College, Thrikkakara  
-**Email:** hodcs@mec.ac.in  
+**Email:** karthikgkumar.pro@gmail.com  
 **Website:** [Model Engineering College](http://www.mec.ac.in)
 
